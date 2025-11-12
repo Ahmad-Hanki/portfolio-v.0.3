@@ -1,24 +1,24 @@
 {
   "about": {
-    "name": "John doe",
+    "name": "Ahmad Hanki",
     "title": "Software Developer",
-    "subTitle": "I develop 3D visuals, user interfaces and web applications",
-    "description": "As a React developer with 5 years of experience, I have honed my skills in JavaScript and am currently learning TypeScript to expand my expertise. I pride myself on being a quick learner and attentive listener, which allows me to collaborate effectively with clients to create efficient and scalable solutions. My focus is on developing user-friendly applications that solve real-world problems.",
-    "quote": "Live the Life as you want",
+    "subTitle": "I develop 3D visuals, user interfaces, and full-stack web applications, as well as mobile applications.",
+    "description": "I’m Ahmad Hanki, a Full Stack JavaScript Developer passionate about building fast, reliable, and user-friendly web applications. I specialize in Next.js, React, and Nest.js, creating scalable digital solutions with strong performance and modern design. I’ve collaborated with teams at Gezer Group, Uzability Studio, and on various freelance projects, developing everything from dynamic frontends to real-time backend systems. I take pride in turning ideas into clean, maintainable code and continuously strive to make digital experiences more intuitive, efficient, and enjoyable",
+    "quote": "Build experiences, not just interfaces.",
     "exp_year": "5",
-    "address": "Los Angeles , America",
+    "address": "Istanbul, Turkey",
     "some_total": "90",
     "phoneNumber": "+91-9528391901",
     "contactEmail": "work.tehseen@gmail.com",
     "avatar": {
       "public_id": "portfolio3/1713995155677-122l5x.webp",
-      "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1713995155677-122l5x.webp"
+      "url": "/pc-image.png"
     },
     "alternateAvatars": [
       {
         "_id": "676e772d8a9e1d0a8b0647ca",
-        "public_id": "portfolio3/1713996156944-1hro1b.webp",
-        "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1713996156944-1hro1b.webp"
+        "public_id": "pc-image.png",
+        "url": "pc-image.png"
       }
     ]
   },

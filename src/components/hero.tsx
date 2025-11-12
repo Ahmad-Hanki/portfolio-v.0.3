@@ -21,13 +21,6 @@ const Hero = ({ about }: HeroProps) => {
       <LoaderWrapper>
         <div className="relative h-full w-full">
           <div className="flex items-center justify-center flex-col h-full pb-10">
-            <Transition>
-              <img
-                src={about.avatar.url}
-                alt={about.name}
-                className="rounded-full size-28 object-cover"
-              />
-            </Transition>
             <div className="py-6 flex items-center flex-col">
               <h2 className="md:text-7xl text-4xl font-bold overflow-hidden">
                 <SlideIn>Hello! I&apos;m {about.name}</SlideIn>

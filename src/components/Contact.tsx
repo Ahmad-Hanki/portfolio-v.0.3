@@ -205,7 +205,7 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
       </div>
       <footer className="flex items-center justify-between md:px-8 px-2 py-4 text-sm">
         <Transition>
-          <div>&copy; {new Date().getFullYear()} ThePortfolio</div>
+          <div>&copy; {new Date().getFullYear()} Ahmad Hanki</div>
         </Transition>
         <Transition>
           <p>

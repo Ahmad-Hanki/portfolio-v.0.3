@@ -29,7 +29,7 @@ export const SlideIn = ({
       whileInView={inView}
       transition={trans}
       viewport={viewport ? viewport : { once: true }}
-      className={cn("inline-block overflow-hidden", className)}
+      className={cn("inline-block overflow-hidden text-center ", className)}
       {...rest}
     />
   );

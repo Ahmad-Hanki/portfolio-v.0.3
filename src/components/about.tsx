@@ -1,20 +1,59 @@
 "use client";
 
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useState, useTransition } from "react";
 import { motion } from "motion/react";
 
 import { About as IAbout, Timeline } from "../utils/interface";
 import { OpacityTextReveal, SlideIn, Transition } from "./ui/Transitions";
 import { formatDate } from "../utils";
+import TabButton from "./TabButton";
 
 interface AboutProps {
   about: IAbout;
   timeline: Timeline[];
 }
 
+const TAB_DATA = [
+  {
+    title: "Skills",
+    id: "skills",
+    content: (
+      <ul className="list-disc pl-6">
+        <li>HTML5, CSS3, JavaScript, TypeScript</li>
+        <li>React.js, Next.js, React Native</li>
+        <li>Tailwind CSS, Shadcn/UI, Framer Motion</li>
+        <li>Node.js, Express.js, NestJS, Prisma ORM</li>
+        <li>GraphQL, Codegen, React Query</li>
+        <li>MySQL, PostgreSQL, MongoDB</li>
+        <li>JWT, Passport, NextAuth, KindeAuth, Clerk</li>
+        <li>Socket.IO, REST APIs, Postman</li>
+        <li>Firebase, AWS, Vercel, DigitalOcean</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Education",
+    id: "education",
+    content: (
+      <ul className="list-disc pl-6">
+        <li>Bachelor of Computer Engineering</li>
+        <li>Iskenderun Technical University, Hatay, Türkiye</li>
+        <li>2025</li>
+      </ul>
+    ),
+  },
+];
+
 const About = ({ about, timeline }: AboutProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [tab, setTab] = useState("skills");
+  const [isPending, startTransition] = useTransition();
 
+  const handleTabChange = (id) => {
+    startTransition(() => {
+      setTab(id);
+    });
+  };
   const education = timeline
     .filter((line) => line.forEducation && line.enabled === true)
     .sort((a, b) => a.sequence - b.sequence);
@@ -38,16 +77,25 @@ const About = ({ about, timeline }: AboutProps) => {
         </Transition>
         <div className="pt-10">
           <div className="py-10 overflow-hidden grid w-full">
-            {education.map((edu, index) => (
-              <Transition key={edu._id}>
-                <TimelineCard
-                  index={index}
-                  activeIndex={activeIndex}
-                  setActiveIndex={setActiveIndex}
-                  timeline={edu}
-                />
-              </Transition>
-            ))}
+            <div className="flex flex-row justify-start mt-8">
+              <TabButton
+                selectTab={() => handleTabChange("skills")}
+                active={tab === "skills"}
+              >
+                {" "}
+                Skills{" "}
+              </TabButton>
+              <TabButton
+                selectTab={() => handleTabChange("education")}
+                active={tab === "education"}
+              >
+                {" "}
+                Education{" "}
+              </TabButton>
+            </div>
+            <div className=" text-base md:text-lg lg:text-xl">
+              {TAB_DATA.find((t) => t.id === tab).content}
+            </div>
           </div>
         </div>
       </div>
